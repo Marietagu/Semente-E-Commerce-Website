@@ -1,4 +1,9 @@
 <%-- webinf is useful to protect sensitive data*/--%>
+<%
+   if (session.getAttribute("name")==null){
+       response.sendRedirect("login.jsp");
+   }
+%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 
