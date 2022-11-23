@@ -1,5 +1,7 @@
 package services;
 
+import org.intellij.lang.annotations.Language;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,7 +30,7 @@ public class DatabaseConnection {
     private final String password = "112358"; // the one set in the installation
     private Connection connection = null;
 
-    public PreparedStatement preparedQuery(String query) {
+    public PreparedStatement preparedQuery(@Language("MySQL") String query) {
         PreparedStatement ps = null;
 
         try {

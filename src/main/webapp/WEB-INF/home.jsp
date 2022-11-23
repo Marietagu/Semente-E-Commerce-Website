@@ -1,4 +1,4 @@
-<%-- webinf is useful to protect sensitive data*/--%>
+<%@ page import="controllers.ProductController" %><%-- webinf is useful to protect sensitive data*/--%>
 <%--<%--%>
 <%--   if (session.getAttribute("name")==null){--%>
 <%--       response.sendRedirect("login.jsp");--%>
@@ -22,9 +22,11 @@
 
     <form action="${pageContext.request.contextPath}/products" method="get" >
         <label for="name-filter-id">Search by name</label>
-        <input name="name"id="name-filter-id" />
+        <input name="<%= ProductController.NAME_PARAM %>>" id="name-filter-id" />
         <button type="submit"> Search </button>
     </form>
+
+    <img src=${pageContext.request.contextPath}/img/lulo.jpeg alt="lulo">
 
 
     <jsp:include page="layouts/footer.jsp"/>

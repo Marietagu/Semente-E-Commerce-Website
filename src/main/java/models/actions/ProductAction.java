@@ -9,14 +9,16 @@ import java.util.HashMap;
 
 public class ProductAction {
 
+    public static final String PRODUCTS_NAME = "products";
+
     public static void  getAll(HttpServletRequest request){
         HashMap<Integer, Product> all = ProductManager.getAll();
-        request.setAttribute("products", all);
+        request.setAttribute(PRODUCTS_NAME, all);
     }
 
     public static void getByName(HttpServletRequest request, String name){
         HashMap<Integer, Product> all = ProductManager.getByName(name);
-        request.setAttribute("products", all);
+        request.setAttribute(PRODUCTS_NAME, all);
 
     }
 }
