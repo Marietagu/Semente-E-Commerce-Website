@@ -1,14 +1,13 @@
 package controllers;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import models.actions.ProductAction;
-import models.entities.Product;
-import models.managers.ProductManager;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 @WebServlet(name = "ProductController", value = "/products")
 public class ProductController extends HttpServlet {
