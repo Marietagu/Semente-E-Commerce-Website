@@ -21,9 +21,9 @@
 
 
     <form action="${pageContext.request.contextPath}/products" method="get" >
-        <label for="name-filter-id">Filter by name</label>
+        <label for="name-filter-id">Search by name</label>
         <input name="name"id="name-filter-id" />
-        <button type="submit"> Filter </button>
+        <button type="submit"> Search </button>
     </form>
 
 

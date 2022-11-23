@@ -17,7 +17,8 @@ public class ProductController extends HttpServlet {
        String name = request.getParameter("name");
 
        if (name != null) {
-           // filter
+           HashMap<Integer, Product> all = ProductManager.getByName(name);
+           request.setAttribute("products", all);
 
        }
        else{
