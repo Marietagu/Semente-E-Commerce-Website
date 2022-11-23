@@ -1,10 +1,9 @@
 <%-- webinf is useful to protect sensitive data*/--%>
-<%
-   if (session.getAttribute("name")==null){
-       response.sendRedirect("login.jsp");
-   }
-%>
-
+<%--<%--%>
+<%--   if (session.getAttribute("name")==null){--%>
+<%--       response.sendRedirect("login.jsp");--%>
+<%--   }--%>
+<%--%>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <% String message = (String) request.getAttribute("servlet-message"); %>
@@ -22,11 +21,9 @@
 
 
     <form action="${pageContext.request.contextPath}/products" method="get" >
-
-        <label for="name-filter-id"> </label>
-        <input name="name-filter"id="name-filter-id" />
+        <label for="name-filter-id">Filter by name</label>
+        <input name="name"id="name-filter-id" />
         <button type="submit"> Filter </button>
-
     </form>
 
 

@@ -14,7 +14,7 @@ public class HomeController extends HttpServlet {
         /*Example*/
 
         HttpSession session = request.getSession();
-        session.setAttribute("username", "Gab");
+        session.setAttribute("username", "User");
 
         request.setAttribute("servlet-message", "From Servlet");
 

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public class DatabaseConnection {
 
 
+
     //region Singleton
     private static DatabaseConnection instance;
 
@@ -21,9 +22,10 @@ public class DatabaseConnection {
     }
     //endregion
 
+
     private final String urlConnection = "jdbc:mysql://localhost:3306/ecommercecart_db";
     private final String username = "root";
-    private final String password = "112358"; // the one you set in the installation
+    private final String password = "112358"; // the one set in the installation
     private Connection connection = null;
 
     public PreparedStatement preparedQuery(String query) {

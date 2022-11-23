@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>Shopping Cart Login</title>
-    <%@include file="layouts/header.jsp" %>
 </head>
 <body>
 <div class="container">
+    <jsp:include page="layouts/header.jsp"/>
     <div class="card w-50 mx-auto my-5">
         <div class="card-header text-center">User Login</div>
         <div class="card-body">
@@ -29,8 +29,8 @@
             </form>
         </div>
     </div>
+    <jsp:include page="layouts/footer.jsp"/>
 </div>
 
-<%@include file="layouts/footer.jsp" %>
 </body>
 </html>
