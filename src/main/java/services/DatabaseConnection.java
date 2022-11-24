@@ -32,7 +32,7 @@ public class DatabaseConnection {
 
         try {
             if (connection == null || connection.isClosed()) {
-                Class.forName("com.mysql.cj.jdbc.Driver"); // makes sure the library is in project
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 String urlConnection = "jdbc:mysql://localhost:3306/ecommercecart_db";
                 String username = "root";
                 // the one set in the installation
