@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b13e38bf-5e29-4756-a819-b01c9cf9ec74" name="Changes" comment="Base.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DatabaseConnection.java" afterDir="false" />
-    </list>
+    <list default="true" id="b13e38bf-5e29-4756-a819-b01c9cf9ec74" name="Changes" comment="Base." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +162,7 @@
       <updated>1669002727695</updated>
       <workItem from="1669002729095" duration="1819000" />
       <workItem from="1669218052200" duration="10396000" />
-      <workItem from="1669236618125" duration="5098000" />
+      <workItem from="1669236618125" duration="5797000" />
     </task>
     <task id="LOCAL-00001" summary="Db connection. Functional Products page.">
       <created>1669167768243</created>
@@ -189,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669242181481</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Base.">
+      <created>1669243901803</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669243901803</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
