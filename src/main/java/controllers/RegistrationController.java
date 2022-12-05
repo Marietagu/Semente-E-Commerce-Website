@@ -23,24 +23,23 @@ public class RegistrationController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession regSession = request.getSession();
 
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
 
-//        String name = request.getParameter("name");
-//        String email = request.getParameter("email");
-//        String password = request.getParameter("password");
-//
-//        User user = new User(name, email, password);
-//
-//        //create a database model
-//        RegistrationManager register = new RegistrationManager(DatabaseConnection.getInstance());//getConnection()
-//        if (register.saveUser(user)) {
-//            response.sendRedirect("home.jsp");
-//        } else {
-//            String errorMessage = "User Available";
-//            HttpSession regSession = request.getSession();
-//            regSession.setAttribute("RegError", errorMessage);
-//            response.sendRedirect("registration.jsp");
-//        }
+        User user = new User(name, email, password);
+
+        //create a database model
+
+        if (RegistrationManager.saveUser(user)) {
+            request.getRequestDispatcher("WEB-INF/home.jsp").forward(request,response);
+        } else {
+            String errorMessage = "User already exists";
+            regSession.setAttribute("RegError", errorMessage);
+            request.getRequestDispatcher("WEB-INF/registration.jsp").forward(request,response);
+        }
 
 
     }

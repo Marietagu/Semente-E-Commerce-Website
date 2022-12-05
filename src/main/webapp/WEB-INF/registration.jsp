@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td><input type="submit" name="submit" value="Register"></td>
-            <td><a href="registration.jsp">Registration</a></td>
+            <td><a href="login.jsp">Login</a></td>
         </tr>
 
     </table>
