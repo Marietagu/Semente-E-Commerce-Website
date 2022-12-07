@@ -28,7 +28,7 @@
     </form>
     </section>
 
-<%--    <img src=${pageContext.request.contextPath}/img/lulo.jpeg alt="lulo">--%>
+ <img src=${pageContext.request.contextPath}/img/lulo.jpeg alt="lulo">
 
     <header class="container">
         <img src="img/logo.png" alt="Semente logo" />
