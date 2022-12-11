@@ -1,12 +1,20 @@
-<%@ page import="controllers.ProductController" %><%-- webinf is useful to protect sensitive data*/--%>
+<%@ page import="controllers.ProductController" %>
+<%@ page import="models.entities.*" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<% User auth = (User) request.getSession().getAttribute("auth");
+    if(auth!=null){
+        request.setAttribute("auth", auth);
+    }
+%>
+
+<%--<% String message = (String) request.getAttribute("servlet-message"); %>--%>
+
 <%--<%--%>
 <%--   if (session.getAttribute("name")==null){--%>
 <%--       response.sendRedirect("login.jsp");--%>
 <%--   }--%>
 <%--%>--%>
-<%@ page contentType="text/html;charset=UTF-8" %>
-
-<% String message = (String) request.getAttribute("servlet-message"); %>
 
 <html>
 <head>
@@ -32,7 +40,6 @@
 <body>
 <div id="page-container">
     <jsp:include page="layouts/header.jsp"/>
-
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home" id="home">

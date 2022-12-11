@@ -28,8 +28,9 @@ public class ProductManager {
                 String name = resultSet.getString("name");
                 String category = resultSet.getString("category");
                 float price = resultSet.getFloat("price");
+                String image = resultSet.getString("image");
 
-                Product product = new Product(id, name, category, price);
+                Product product = new Product(id, name, category, price, image);
 
                 result.put(product.getId(), product); // add all products
             }
@@ -57,8 +58,9 @@ public class ProductManager {
                 String name = resultSet.getString("name");
                 String category = resultSet.getString("category");
                 float price = resultSet.getFloat("price");
+                String image = resultSet.getString("image");
 
-                Product product = new Product(id, name, category, price);
+                Product product = new Product(id, name, category, price, image);
 
                 result.put(product.getId(), product);
             }
@@ -86,8 +88,9 @@ public class ProductManager {
                 String name = resultSet.getString("name");
                 String category = resultSet.getString("category");
                 float price = resultSet.getFloat("price");
+                String image = resultSet.getString("image");
 
-                Product product = new Product(id, name, category, price);
+                Product product = new Product(id, name, category, price, image);
 
                 result.put(product.getId(), product);
             }

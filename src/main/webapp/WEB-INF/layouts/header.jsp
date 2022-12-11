@@ -5,6 +5,18 @@
 <%--        username = "";--%>
 <%--%>--%>
 <%--    <h1>Welcome <%= username %></h1>--%>
+
+<%@ page import="controllers.LoginController" %>
+<%@ page import="controllers.LogoutController" %>
+
+<%@ page import="models.entities.*" %>
+
+<% User auth = (User) request.getSession().getAttribute("auth");
+    if(auth!=null){
+        request.setAttribute("auth", auth);
+    }
+%>
+
 <head>
 
     <meta charset="UTF-8">
@@ -43,14 +55,29 @@
                     <li class="nav__item">
                         <a href="${pageContext.request.contextPath}/products" class="nav__link">Products</a>
                     </li>
+
+                    <%
+                        if (auth != null) {
+                    %>
+                    <li class="nav__item">
+                        <a class="nav__link" href="${pageContext.request.contextPath}/orders">Orders</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="${pageContext.request.contextPath}/logout">Logout</a>
+                    </li>
+                    <%
+                    } else {
+                    %>
                     <li class="nav__item">
                     <a href="${pageContext.request.contextPath}/registration" class="nav__link">Sign-up</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="${pageContext.request.contextPath}/login" class="nav__link">Login</a>
+                    <li class="nav__item"><a href="${pageContext.request.contextPath}/login" class="nav__link">Login</a>
                     </li>
+                    <%
+                        }
+                    %>
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Cart</a>
+                    <a href="${pageContext.request.contextPath}/cart" class="nav__link">Cart</a>
                     </li>
                 </ul>
 

@@ -7,13 +7,15 @@ public class Product {
     private String name;
     private String category;
     private float price;
+    private String image;
 
 
-    public Product(int id, String name, String category, float price) {
+    public Product(int id, String name, String category, float price, String image) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
+        this.image = image;
     }
 
 
@@ -47,5 +49,13 @@ public class Product {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void getImage(String image) {
+        this.name = image;
     }
 }

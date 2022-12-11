@@ -1,10 +1,25 @@
 
+<%@ page import="models.entities.*" %>
+
+<% User auth = (User) request.getSession().getAttribute("auth");
+    if(auth!=null){
+//        request.setAttribute("auth", auth);
+        response.sendRedirect("home.jsp");
+    }
+%>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<br><br><br>
 <head>
     <title>Login</title>
 </head>
 <body>
+
+<div id="page-container">
+    <jsp:include page="layouts/header.jsp"/>
+
 <form action="${pageContext.request.contextPath}/login" method="post">
     <h1>Login</h1>
     <table>
@@ -22,5 +37,9 @@
         </tr>
     </table>
 </form>
+
+    <jsp:include page="layouts/footer.jsp"/>
+</div>
 </body>
+
 </html>

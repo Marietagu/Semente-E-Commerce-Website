@@ -19,6 +19,7 @@
 
 <html>
 <head>
+    <br><br><br>
     <title>Product page</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 
@@ -29,7 +30,7 @@
 
     <h1>Product page</h1>
 
-    <br><br><br><br><br>
+    <br><br><br>
 
     <section class="search">
         <form action="${pageContext.request.contextPath}/products" method="get" >
@@ -45,33 +46,36 @@
         </form>
     </section>
 
+    <div class="container">
+        <div class="card-header my-3">Our Seeds</div>
+        <div class="row">
+            <%
+                if (!products.isEmpty()) {
+                    for (Map.Entry<Integer, Product> product : products.entrySet()) {
+            %>
+            <div class="col-md-3 my-3">
+                <div class="card w-100">
+                    <img class="card-img-top" src="img/<%=product.getValue().getImage() %>">
 
-    <table>
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Price</th>
-        </tr>
-        </thead>
-        <tbody>
+                    <div class="card-body">
+                        <h5 class="card-title"><%=product.getValue().getName() %></h5>
+                        <h6 class="price">Price: $<%=product.getValue().getPrice() %></h6>
+                        <h6 class="category">Category: <%=product.getValue().getCategory() %></h6>
+                        <div class="mt-3 d-flex justify-content-between">
+                            <a class="btn btn-dark" href="add-to-cart?id=<%=product.getValue().getId()%>">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%
+                    }
+                } else {
+                    out.println("There is no proucts");
+                }
+            %>
 
-        <%
-            for (Map.Entry<Integer, Product> product : products.entrySet()) {
-        %>
-        <tr>
-            <td><%= product.getValue().getName() %></td>
-            <td><%= product.getValue().getCategory() %></td>
-            <td><%= product.getValue().getPrice() %></td>
-        </tr>
-        <%
-            }
-        %>
-
-        </tbody>
-    </table>
-
-
+        </div>
+    </div>
 
     <jsp:include page="layouts/footer.jsp"/>
 </div>

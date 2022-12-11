@@ -9,9 +9,9 @@ public class LogoutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        User newUser = (User) session.getAttribute("userLogged");
+        User newUser = (User) session.getAttribute("auth");
         session.removeAttribute(Integer.toString(newUser.getId()));
-        session.removeAttribute("userLogged");
+        session.removeAttribute("auth");
         session.removeAttribute("order");
         session.removeAttribute("cartList");
         request.getRequestDispatcher("WEB-INF/home.jsp").forward(request,response);

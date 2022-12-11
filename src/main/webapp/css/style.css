@@ -415,7 +415,7 @@ the website, in dark theme
 }
 
 .about__img{
-    width: 560px;
+    width: 435px;
     justify-self: center;
 }
 
@@ -492,6 +492,11 @@ the website, in dark theme
 }
 
 /*=============== PRODUCTS ===============*/
+#col-md-3.card-img-top{
+    position: relative;
+    max-width: 100%;
+}
+
 .product__description{
     text-align: center;
 }
@@ -983,7 +988,7 @@ the website, in dark theme
     }
 
     .about__img{
-        width: 760px;
+        width: 435px;
     }
 
     .steps__container{
