@@ -6,17 +6,21 @@
 <%--%>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
-
+<!DOCTYPE html>
 <html>
-<head>
-</head>
+
+    <head>
+        <jsp:include page="layouts/header.jsp"/>
+        <title>Registration</title>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    </head>
+
 
 <body>
-<jsp:include page="layouts/header.jsp"/>
-<br><br><br><br><br><br>
-<title>Register</title>
+<div id="page-container">
+<title>Sign-up</title>
 <div class="register" id="register">
-    <h1>Register</h1>
+    <h1>Sign-up</h1>
     <%if(session.getAttribute("RegError")!=null){%>
     <h3>This email is already registered</h3>
     <%session.removeAttribute("RegError");}%>
@@ -32,12 +36,20 @@
 
         <tr>
         <td>Email:</td>
-        <td><input type="text" placeholder="Email" name="email" ></td>
+        <td>
+            <label>
+            <input type="text" placeholder="Email" name="email" >
+            </label>
+        </td>
         </tr>
 
         <tr>
             <td>Password:</td>
-            <td><input type="password" placeholder="Password" name="password" ></td>
+            <td>
+                <label>
+                <input type="password" placeholder="Password" name="password" >
+                </label>
+            </td>
         </tr>
 
         <tr>
@@ -47,9 +59,11 @@
     </table>
 
 </form>
+
+    <%@include file="layouts/footer.jsp" %>
+</div>
+
+
 </body>
 </html>
 
-<%@include file="layouts/footer.jsp" %>
-</body>
-</html>

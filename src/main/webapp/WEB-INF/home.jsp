@@ -16,7 +16,9 @@
 <%--   }--%>
 <%--%>--%>
 
+<!DOCTYPE html>
 <html>
+
 <head>
 
     <meta charset="UTF-8">
@@ -31,6 +33,8 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+
+    <jsp:include page="layouts/header.jsp"/>
 
     <title>Home</title>
 
@@ -55,7 +59,7 @@
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <a href="#about" class="button button--flex">
-                        Explore <i class="ri-arrow-right-down-line button__icon"></i>
+                        Check our seeds! <i class="ri-arrow-right-down-line button__icon"></i>
                     </a>
                 </div>
 
@@ -84,30 +88,30 @@
 
                 <div class="about__data">
                     <h2 class="section__title about__title">
-                        Who we really are & <br> why choose us
+                        Lorem ipsum dolor sit amet!
                     </h2>
 
                     <p class="about__description">
-                        We have over 4000+ unbiased reviews and our customers
-                        trust our plant process and delivery service every time
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
 
                     <div class="about__details">
                         <p class="about__details-description">
                             <i class="ri-checkbox-fill about__details-icon"></i>
-                            We always deliver on time.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                         <p class="about__details-description">
                             <i class="ri-checkbox-fill about__details-icon"></i>
-                            We give you guides to protect and care for your plants.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                         <p class="about__details-description">
                             <i class="ri-checkbox-fill about__details-icon"></i>
-                            We always come over for a check-up after sale.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                         <p class="about__details-description">
                             <i class="ri-checkbox-fill about__details-icon"></i>
-                            100% money back guaranteed.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                     </div>
 
@@ -126,4 +130,5 @@
     <jsp:include page="layouts/footer.jsp"/>
 </div>
 </body>
+
 </html>

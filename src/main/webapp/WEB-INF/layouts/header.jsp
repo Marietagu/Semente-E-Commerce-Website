@@ -50,7 +50,7 @@
                         <a href="${pageContext.request.contextPath}/home" class="nav__link active-link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">Who we are</a>
+                        <a href="home#about" class="nav__link">Who we are</a>
                     </li>
                     <li class="nav__item">
                         <a href="${pageContext.request.contextPath}/products" class="nav__link">Products</a>

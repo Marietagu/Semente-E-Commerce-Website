@@ -17,20 +17,18 @@
 
 <% HashMap<Integer, Product> products = (HashMap<Integer, Product>) request.getAttribute(ProductAction.PRODUCTS_NAME); %>
 
+<!DOCTYPE html>
 <html>
 <head>
-    <br><br><br>
+    <jsp:include page="layouts/header.jsp"/>
     <title>Product page</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-
 </head>
+
 <body>
-<div id="container">
-    <jsp:include page="layouts/header.jsp"/>
-
-    <h1>Product page</h1>
-
+<div id="page-container">
     <br><br><br>
+    <h1>Product page</h1>
 
     <section class="search">
         <form action="${pageContext.request.contextPath}/products" method="get" >
@@ -47,7 +45,7 @@
     </section>
 
     <div class="container">
-        <div class="card-header my-3">Our Seeds</div>
+        <div class="card-header my-3"></div>
         <div class="row">
             <%
                 if (!products.isEmpty()) {
@@ -70,7 +68,7 @@
             <%
                     }
                 } else {
-                    out.println("There is no proucts");
+                    out.println("No products!");
                 }
             %>
 
@@ -79,5 +77,8 @@
 
     <jsp:include page="layouts/footer.jsp"/>
 </div>
+
+
+
 </body>
 </html>

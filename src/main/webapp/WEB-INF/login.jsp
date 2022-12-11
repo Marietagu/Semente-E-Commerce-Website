@@ -8,18 +8,22 @@
     }
 %>
 
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!DOCTYPE html>
 <html>
-<br><br><br>
+
 <head>
+    <jsp:include page="layouts/header.jsp"/>
     <title>Login</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
+
+<br><br><br>
+
 <body>
 
 <div id="page-container">
-    <jsp:include page="layouts/header.jsp"/>
-
 <form action="${pageContext.request.contextPath}/login" method="post">
     <h1>Login</h1>
     <table>
