@@ -43,7 +43,7 @@
 
 <body>
 <div id="page-container">
-    <jsp:include page="layouts/header.jsp"/>
+<%--    <jsp:include page="layouts/header.jsp"/>--%>
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home" id="home">
@@ -59,7 +59,7 @@
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <a href="#about" class="button button--flex">
-                        Check our seeds! <i class="ri-arrow-right-down-line button__icon"></i>
+                        Check our seeds' packs! <i class="ri-arrow-right-down-line button__icon"></i>
                     </a>
                 </div>
 
@@ -84,7 +84,6 @@
         <!--==================== ABOUT ====================-->
         <section class="about section container" id="about">
             <div class="about__container grid">
-                <img src="${pageContext.request.contextPath}/img/about.png" alt="" class="about__img">
 
                 <div class="about__data">
                     <h2 class="section__title about__title">
@@ -119,6 +118,9 @@
                         Shop Now <i class="ri-arrow-right-down-line button__icon"></i>
                     </a>
                 </div>
+
+                <img src="${pageContext.request.contextPath}/img/about.png" alt="" class="about__img">
+
             </div>
         </section>
 

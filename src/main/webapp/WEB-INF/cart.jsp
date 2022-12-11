@@ -13,9 +13,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <jsp:include page="layouts/header.jsp"/>
-    <title>Cart</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+
+    <jsp:include page="layouts/header.jsp"/>
+
+    <title>Cart</title>
+
 </head>
 
 <body>

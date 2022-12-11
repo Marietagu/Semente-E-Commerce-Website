@@ -2,19 +2,20 @@
     <div class="footer__container container grid">
         <div class="footer__content">
             <a href="#" class="footer__logo">
-                <i class="ri-leaf-line footer__logo-icon"></i> Semente
+                <i class="ri-seedling-line footer__logo-icon"></i> S E M E N T E
             </a>
 
             <h3 class="footer__title">
-                Subscribe to our newsletter <br> to stay update
+                Subscribe to our newsletter!
             </h3>
 
             <div class="footer__subscribe">
-                <input type="email" placeholder="Enter your email" class="footer__input">
+                <label>
+                    <input type="email" placeholder="Your email:" class="footer__input">
+                </label>
 
                 <button class="button button--flex footer__button">
-                    Subscribe
-                    <i class="ri-arrow-right-up-line button__icon"></i>
+                    <i class="ri-arrow-right-up-line button__icon">Subscribe</i>
                 </button>
             </div>
         </div>
@@ -33,7 +34,8 @@
             <h3 class="footer__title">Contact Us</h3>
 
             <ul class="footer__data">
-                <li class="footer__information">+999 888 777</li>
+                <li class="footer__information">+1 438 346-3609</li>
+                <li class="footer__information">semente.seedsbank@gmail.com</li>
 
                 <div class="footer__social">
                     <a href="https://www.facebook.com/" class="footer__social-link">
@@ -51,7 +53,7 @@
 
         <div class="footer__content">
             <h3 class="footer__title">
-                We accept all credit cards
+                Payment methods:
             </h3>
 
             <div class="footer__cards">

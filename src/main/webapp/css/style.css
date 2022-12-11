@@ -411,11 +411,11 @@ the website, in dark theme
 
 /*=============== ABOUT ===============*/
 .about__container{
-    row-gap: 2rem;
+    row-gap: 0.5rem;
 }
 
 .about__img{
-    width: 435px;
+    width: 550px;
     justify-self: center;
 }
 
@@ -988,7 +988,7 @@ the website, in dark theme
     }
 
     .about__img{
-        width: 435px;
+        width: 550px;
     }
 
     .steps__container{
