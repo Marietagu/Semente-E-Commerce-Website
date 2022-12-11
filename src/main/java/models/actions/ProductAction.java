@@ -16,9 +16,16 @@ public class ProductAction {
         request.setAttribute(PRODUCTS_NAME, all);
     }
 
+
     public static void getByName(HttpServletRequest request, String name){
         HashMap<Integer, Product> all = ProductManager.getByName(name);
         request.setAttribute(PRODUCTS_NAME, all);
 
+    }
+
+
+    public static void getByCategory(HttpServletRequest request, String category){
+        HashMap<Integer, Product> all = ProductManager.getByCategory(category);
+        request.setAttribute(PRODUCTS_NAME, all);
     }
 }

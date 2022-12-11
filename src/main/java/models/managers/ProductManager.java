@@ -1,4 +1,5 @@
 package models.managers;
+import org.intellij.lang.annotations.Language;
 import services.DatabaseConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,6 +48,35 @@ public class ProductManager {
         HashMap<Integer, Product> result = new HashMap<>();
 
         try (PreparedStatement preparedStatement = DatabaseConnection.getInstance().preparedQuery("select * from product where lower(name) = ?")) {
+            preparedStatement.setString(1, value.toLowerCase()); // index starts at 1 instead of 0
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String category = resultSet.getString("category");
+                float price = resultSet.getFloat("price");
+
+                Product product = new Product(id, name, category, price);
+
+                result.put(product.getId(), product);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            DatabaseConnection.getInstance().close();
+        }
+
+        return result;
+    }
+
+
+    public static HashMap<Integer, Product> getByCategory(String value) {
+        HashMap<Integer, Product> result = new HashMap<>();
+
+        try (PreparedStatement preparedStatement = DatabaseConnection.getInstance().preparedQuery("select * from product where lower(category) = ?")) {
             preparedStatement.setString(1, value.toLowerCase()); // index starts at 1 instead of 0
 
             ResultSet resultSet = preparedStatement.executeQuery();

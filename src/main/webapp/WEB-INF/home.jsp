@@ -10,189 +10,112 @@
 
 <html>
 <head>
-    <title>Home</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+
+    <title>Home</title>
+
 </head>
+
+
 <body>
 <div id="page-container">
     <jsp:include page="layouts/header.jsp"/>
 
-    <h1>Home page</h1>
-    <p><%= message %></p>
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <div class="home__container container grid">
+                <img src="${pageContext.request.contextPath}/img/home.png" alt="" class="home__img">
 
-    <section class="search">
-    <form action="${pageContext.request.contextPath}/products" method="get" >
-        <label for="name-filter-id">Search by name</label>
-        <input name="<%= ProductController.NAME_PARAM %>>" id="name-filter-id" />
-        <button type="submit"><img src="img/search.png" alt="search" /></button>
-    </form>
-    </section>
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Plant a seed, <br> breed life!
+                    </h1>
+                    <p class="home__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#about" class="button button--flex">
+                        Explore <i class="ri-arrow-right-down-line button__icon"></i>
+                    </a>
+                </div>
 
- <img src=${pageContext.request.contextPath}/img/lulo.jpeg alt="lulo">
+                <div class="home__social">
+                    <span class="home__social-follow">Follow Us</span>
 
-    <header class="container">
-        <img src="img/logo.png" alt="Semente logo" />
-        <p class="shopping-bag">
-            No item in the shopping bag
-        </p>
-        <nav class="menu-options">
-            <ul>
-                <li><a href="#1">Your account</a></li>
-                <li><a href="#2">Wish list</a></li>
-                <li><a href="#3">Fidelity card</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="#5">Help</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container highlight"> <!--two classes, container and highlight-->
-
-        <section class="menu-departments">
-            <h2>Products</h2>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">Tropical trees</a>
-                        <ul>
-                            <li><a href="#">Ipê</a></li>
-                            <li><a href="#">Cocoa</a></li>
-                            <li><a href="#">Guayava</a></li>
-                            <li><a href="#">Mango</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Fruits</a></li>
-                    <li><a href="#">Herbs</a></li>
-                </ul>
-            </nav>
+                    <div class="home__social-links">
+                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="banner-highlight">
-            <figure>
-                <img src="img/highlight-home.png" alt="Semente promotion picture" />
-            </figure>
-        </section>
-    </div>
+        <!--==================== ABOUT ====================-->
+        <section class="about section container" id="about">
+            <div class="about__container grid">
+                <img src="${pageContext.request.contextPath}/img/about.png" alt="" class="about__img">
 
+                <div class="about__data">
+                    <h2 class="section__title about__title">
+                        Who we really are & <br> why choose us
+                    </h2>
 
-    <div class="container panels">
-        <section class="panel news">
-            <h2>Deals</h2>
-            <ol>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature1.png" alt="miniature1 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
+                    <p class="about__description">
+                        We have over 4000+ unbiased reviews and our customers
+                        trust our plant process and delivery service every time
+                    </p>
+
+                    <div class="about__details">
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            We always deliver on time.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            We give you guides to protect and care for your plants.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            We always come over for a check-up after sale.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            100% money back guaranteed.
+                        </p>
+                    </div>
+
+                    <a href="#" class="button--link button--flex">
+                        Shop Now <i class="ri-arrow-right-down-line button__icon"></i>
                     </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature2.png" alt="miniature2 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature3.png" alt="miniature3 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature4.png" alt="miniature4 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature5.png" alt="miniature5 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature6.png" alt="miniature6 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-            </ol>
+                </div>
+            </div>
         </section>
 
-        <section class="panel best-sellers">
-            <h2>Best-sellers</h2>
-            <ol>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature7.png" alt="miniature7 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature8.png" alt="miniature8 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature9.png" alt="miniature9 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature10.png" alt="miniature10 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature11.png" alt="miniature11 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li>
-                    <a href="product.html">
-                        <figure>
-                            <img src="img/products/miniature12.png" alt="miniature12 picture" />
-                            <figcaption>Description... for Can$ 49.99</figcaption>
-                        </figure>
-                    </a>
-                </li>
-            </ol>
-        </section>
-    </div>
-    <footer>
-        <div class="container">
-            <img src="img/logo-footer.png" alt="Semente" />
-            <ul class="social">
-                <li><a href="http://facebook.com/semente">Facebook</a></li>
-                <li><a href="http://twitter.com/semente">Twitter</a></li>
-                <li><a href="http://plus.google/semente">Google</a></li>
-            </ul>
-        </div>
-    </footer>
+        <script src="${pageContext.request.contextPath}/css/js/scrollreveal.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="${pageContext.request.contextPath}/css/js/main.js"></script>
+
     <jsp:include page="layouts/footer.jsp"/>
 </div>
 </body>

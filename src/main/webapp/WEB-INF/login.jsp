@@ -5,24 +5,22 @@
     <title>Login</title>
 </head>
 <body>
-<form action="LoginRegister">
+<form action="${pageContext.request.contextPath}/login" method="post">
     <h1>Login</h1>
     <table>
         <tr>
             <td>Email:</td>
-            <td><input type="text" name="name"></td>
+            <td><input type="text" placeholder="email" name="email" required></td>
         </tr>
         <tr>
             <td>Password:</td>
-            <td><input type="password" name="password"></td>
+            <td><input type="password" placeholder="password" name="password" required></td>
         </tr>
         <tr>
             <td><input type="submit" name="submit" value="login"></td>
-            <td><a href="registration.jsp">Registration</a></td>
+            <td><a href="${pageContext.request.contextPath}/registration">Registration</a></td>
         </tr>
-
     </table>
 </form>
-
 </body>
 </html>
