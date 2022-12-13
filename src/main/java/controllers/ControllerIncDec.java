@@ -1,20 +1,19 @@
 package controllers;
-
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import models.entities.Cart;
-import models.managers.ProductManager;
-
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 @WebServlet(name = "ControllerIncDec", value = "/quantity-inc-dec")
 public class ControllerIncDec extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
 //
             String action = request.getParameter("action");
@@ -34,9 +33,9 @@ public class ControllerIncDec extends HttpServlet {
                             int quantity = seed.getQuantity();
                             quantity++;
                             seed.setQuantity(quantity);
-//                            response.sendRedirect("cart");
+                            response.sendRedirect("cart");
 //                            session.setAttribute("content", cartContent);
-                            request.getRequestDispatcher("WEB-INF/cart.jsp").forward(request, response);
+//                            request.getRequestDispatcher("WEB-INF/cart.jsp").forward(request, response);
                         }
                     }
                 }
@@ -50,14 +49,14 @@ public class ControllerIncDec extends HttpServlet {
                             break;
                         }
                     }
-//                    response.sendRedirect("cart");
+                    response.sendRedirect("cart");
 //                    session.setAttribute("content", cartContent);
-                    request.getRequestDispatcher("WEB-INF/cart.jsp").forward(request, response);
+//                    request.getRequestDispatcher("WEB-INF/cart.jsp").forward(request, response);
                 }
             } else {
-//                response.sendRedirect("cart");
+                response.sendRedirect("cart");
 //                session.setAttribute("content", cartContent);
-                request.getRequestDispatcher("WEB-INF/cart.jsp").forward(request, response);
+//                request.getRequestDispatcher("WEB-INF/cart.jsp").forward(request, response);
 
             }
 

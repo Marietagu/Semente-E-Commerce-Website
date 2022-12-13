@@ -80,7 +80,8 @@
                         }
                     %>
                     <li class="nav__item">
-                    <a href="${pageContext.request.contextPath}/cart" class="nav__link">Cart<span class="badge  badge-danger px-2">${ cartContent.size()}</span></a>
+<%--                        <span class="badge  badge-danger px-2">${ cartContent.size()}</span>--%>
+                    <a href="${pageContext.request.contextPath}/cart" class="nav__link">Cart</a>
                     </li>
                 </ul>
 

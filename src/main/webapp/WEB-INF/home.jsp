@@ -15,7 +15,6 @@
     }%>
 
 <%--<% String message = (String) request.getAttribute("servlet-message"); %>--%>
-
 <%--<%--%>
 <%--   if (session.getAttribute("name")==null){--%>
 <%--       response.sendRedirect("login.jsp");--%>

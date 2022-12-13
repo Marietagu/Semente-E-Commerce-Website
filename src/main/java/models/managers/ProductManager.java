@@ -21,7 +21,9 @@ public class ProductManager {
         // Get service // Do query
         try (PreparedStatement preparedStatement = DatabaseConnection.getInstance().preparedQuery("select * from product")) {
 
+
             ResultSet resultSet = preparedStatement.executeQuery();
+
 
             // Process result
             while (resultSet.next()) {

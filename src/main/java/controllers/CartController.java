@@ -34,10 +34,13 @@ public class CartController extends HttpServlet {
             Cart seed = new Cart();
 
             seed.setId(id);
+            seed.setQuantity(1);
+            seed.setImage(product.getImage());
             seed.setCategory(product.getCategory());
             seed.setName(product.getName());
             seed.setPrice(product.getPrice());
-            seed.setQuantity(1);
+
+
             session.setAttribute("seed", seed);
 
 
@@ -46,8 +49,8 @@ public class CartController extends HttpServlet {
             if (cartContent == null) {
                 ArrayList<Cart> CartContent = new ArrayList<>();
                 CartContent.add(seed);
-
                 session.setAttribute("content", CartContent);
+
             } else {
 
                 boolean exist = false;

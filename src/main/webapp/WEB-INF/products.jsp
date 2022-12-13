@@ -1,9 +1,4 @@
-<%-- webinf is useful to protect sensitive data*/--%>
-<%--<%--%>
-<%--   if (session.getAttribute("name")==null){--%>
-<%--       response.sendRedirect("login.jsp");--%>
-<%--   }--%>
-<%--%>--%>
+
 <%@ page import="controllers.ProductController" %>
 <%@ page import="controllers.CartController" %>
 <%@ page import="models.managers.ProductManager" %>
@@ -20,11 +15,11 @@
 
 <% HashMap<Integer, Product> products = (HashMap<Integer, Product>) request.getAttribute(ProductAction.PRODUCTS_NAME); %>
 
-<%  ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");
-    if(cartContent != null) {
-        request.setAttribute("cartContent", cartContent);
-    };
-%>
+<%--<%  ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");--%>
+<%--    if(cartContent != null) {--%>
+<%--        request.setAttribute("cartContent", cartContent);--%>
+<%--    };--%>
+<%--%>--%>
 
 
 
