@@ -14,18 +14,11 @@
         request.setAttribute("cartContent", cartContent);
     }%>
 
-<%--<% String message = (String) request.getAttribute("servlet-message"); %>--%>
-<%--<%--%>
-<%--   if (session.getAttribute("name")==null){--%>
-<%--       response.sendRedirect("login.jsp");--%>
-<%--   }--%>
-<%--%>--%>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,20 +35,14 @@
 <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">--%>
 
 <%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">--%>
-
-    <jsp:include page="layouts/header.jsp"/>
-
     <title>Home</title>
-
 </head>
 
-
 <body>
-
-<%--<jsp:include page="layouts/header.jsp"/>--%>
-
-<div id="page-container">
+<jsp:include page="layouts/header.jsp"/>
     <main class="main">
+
+        <div id="page-container">
         <!--==================== HOME ====================-->
         <section class="home" id="home">
             <div class="home__container container grid">
@@ -142,6 +129,8 @@
 
     <jsp:include page="layouts/footer.jsp"/>
 </div>
+
+    </main>
 </body>
 
 </html>

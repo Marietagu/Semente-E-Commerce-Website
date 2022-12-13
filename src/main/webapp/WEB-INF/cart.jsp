@@ -15,7 +15,6 @@
 
 
 <%
-
 //    User auth = (User) request.getSession().getAttribute("auth");
 //        if (auth != null) {
 //       request.setAttribute("auth", auth);
@@ -23,19 +22,18 @@
 
   DecimalFormat dcf = new DecimalFormat("#.##");
   request.setAttribute("dcf", dcf);
-
   ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");
 
 //  if(cartContent != null) {
 //
-////      float total =   ProductManager.getTotalCartPrice(cartContent);
-////      request.setAttribute("cartContent", cartContent);
-////      request.setAttribute("total", total);
+//      ProductManager p = (ProductManager) session.getAttribute("");
+//      float total =   ProductManager.getTotalCartPrice(cartContent);
+//      request.setAttribute("cartContent", cartContent);
+//      request.setAttribute("total", total);
+//
 //  }
-
+float total = 0;
  %>
-
-
 
 
 <!DOCTYPE html>
@@ -75,11 +73,9 @@
 
 <body>
 
-<%--${(total>0)?dcf.format(total):0}--%>
-
 <div id="page-container">
     <h1>Cart</h1>
-<%--    <div class="d-flex py-3"><h3>$ ${(total>0)?total:0}  </h3> <a class="mx-3 btn btn-primary" href="cart-check-out">Check Out</a></div>--%>
+
     <table class="table table-light">
 
         <thead>
@@ -89,7 +85,7 @@
             <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Category</th>
-            <th scope="col">Price</th>
+            <th scope="col">Price(per pack)</th>
             <th scope="col">Quantity</th>
             <th scope="col"></th>
         </tr>
@@ -102,17 +98,11 @@
         %>
 
         <tr>
-
             <td><%=seed.getId()%></td>
-
-<%--            <div class="card w-100" style="width: 9rem;">--%>
             <td><img class="" src="img/<%=seed.getImage() %>" width="50" alt="image"></td>
-<%--            </div>--%>
-
             <td><%=seed.getName()%></td>
             <td><%=seed.getCategory()%></td>
             <td><%= dcf.format(seed.getPrice())%></td>
-
             <td>
                 <form action="" method="post" class="form-inline">
                     <input type="hidden" name="id" value="<%= seed.getId()%>" class="form-input">
@@ -124,17 +114,57 @@
                         <a class="btn bnt-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%=seed.getId()%>"><i class="fas fa-plus-square"></i></a>
                     </div>
 
+
+                        <%
+                            total += (seed.getPrice())*(seed.getQuantity());
+                            out.println(": " + (seed.getPrice())*(seed.getQuantity()));
+
+                        %>
+
+
                 </form>
             </td>
-            <td><a href="remove-from-cart?id=<%=seed.getId() %>" class="btn btn-sm btn-danger">Remove</a></td>
+
+            <td><a href="remove?id=<%=seed.getId() %>" class="btn btn-sm btn-danger">Remove</a></td>
+
         </tr>
+
 <%
 
     }}%>
 
         </tbody>
     </table>
+<%--    <div class="d-flex py-3"><h3> <%= total %>  </h3> <a class="mx-3 btn btn-primary" href="cart-check-out">Check Out</a></div>--%>
+    <h3><%= total %></h3>
 
+
+    <% session.setAttribute("total", total); %>
+
+    <a href="${pageContext.request.contextPath}/checkout"> CHECKOUT </a>
+
+
+<%--    <form method="post" action="submit">--%>
+<%--        <button type="button" class="btn btn-" > </button>--%>
+<%--    </form>--%>
+
+<%--<%--%>
+
+<%--    float total = 0;--%>
+<%--    float fTotal = 0;--%>
+
+<%--    for (int i = 2; i < cartContent.size(); i++) {--%>
+
+<%--        for (Cart c : cartContent) {--%>
+<%--            total += (c.getPrice())*(c.getQuantity());--%>
+<%--        }--%>
+
+<%--        fTotal += total;--%>
+
+<%--        out.println("Total: " + fTotal);--%>
+<%--    }--%>
+
+<%--%>--%>
 <button type="button" class="btn btn-"><a href="${pageContext.request.contextPath}/products" class="nav__link">Buy more!</a></button>
 
 </div>

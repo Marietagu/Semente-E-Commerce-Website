@@ -84,6 +84,9 @@ html{
 /*test padding*/
 #page-container{
     padding: 100px 10% 0;
+    background-color: var(--body-color);
+    color: var(--text-color);
+
 }
 
 body,
@@ -989,7 +992,7 @@ the website, in dark theme
     }
 
     .home{
-        padding: 13rem 0 5rem;
+        padding: 8rem 0 5rem;
     }
     .home__img{
         width:1050px;

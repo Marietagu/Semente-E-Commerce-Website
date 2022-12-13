@@ -1,12 +1,14 @@
 package models.managers;
+
 import models.entities.Cart;
+import models.entities.Product;
 import services.DatabaseConnection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import models.entities.Product;
 
 public class ProductManager {
 
@@ -143,10 +145,10 @@ public class ProductManager {
     }
 
     public static float getTotalCartPrice(ArrayList<Cart> cartContent) {
-//        ArrayList<Cart> sum = new ArrayList<>;
+
         float sum = 0;
 
-        try (PreparedStatement preparedStatement = DatabaseConnection.getInstance().preparedQuery("select * from product where id = ?")) {
+        try (PreparedStatement preparedStatement = DatabaseConnection.getInstance().preparedQuery("select price from product where id = ?")) {
             if (cartContent.size() > 0) {
                 for (Cart seed : cartContent) {
                     preparedStatement.setInt(1, seed.getId());
@@ -160,6 +162,8 @@ public class ProductManager {
             e.printStackTrace();
         }
         return sum;
-    }
 
+    }
 }
+
+
