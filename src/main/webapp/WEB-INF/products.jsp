@@ -1,21 +1,32 @@
-<%@ page import="controllers.ProductController" %><%-- webinf is useful to protect sensitive data*/--%>
+<%-- webinf is useful to protect sensitive data*/--%>
 <%--<%--%>
 <%--   if (session.getAttribute("name")==null){--%>
 <%--       response.sendRedirect("login.jsp");--%>
 <%--   }--%>
 <%--%>--%>
-<%@ page contentType="text/html;charset=UTF-8" %>
-
-<% String message = (String) request.getAttribute("servlet-message"); %>
+<%@ page import="controllers.ProductController" %>
+<%@ page import="controllers.CartController" %>
+<%@ page import="models.managers.ProductManager" %>
+<%@ page import="services.*" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="models.entities.Product" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="models.actions.ProductAction" %>
+<%@ page import="models.entities.Cart" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
-
+<% String message = (String) request.getAttribute("servlet-message"); %>
 
 <% HashMap<Integer, Product> products = (HashMap<Integer, Product>) request.getAttribute(ProductAction.PRODUCTS_NAME); %>
+
+<%  ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");
+    if(cartContent != null) {
+        request.setAttribute("cartContent", cartContent);
+    };
+%>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -33,6 +44,8 @@
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <jsp:include page="layouts/header.jsp"/>
 
     <title>Product page</title>
@@ -40,9 +53,8 @@
 
 <body>
 
-<div id="page-container">
-    <br><br><br>
-    <h1>Product page</h1>
+<div id="page-container" class="test">
+<%--    style="padding: 100px 10% 0--%>
 
     <section class="search">
         <form action="${pageContext.request.contextPath}/products" method="get" >
@@ -58,23 +70,22 @@
         </form>
     </section>
 
-    <div class="container">
-        <div class="card-header my-3"></div>
+    <div class="page-container">
+        <div class="card-header my-3" style="position: center">Our Seeds</div>
         <div class="row">
             <%
                 if (!products.isEmpty()) {
                     for (Map.Entry<Integer, Product> product : products.entrySet()) {
             %>
-            <div class="col-md-3 my-3">
-                <div class="card w-100">
-                    <img class="card-img-top" src="img/<%=product.getValue().getImage() %>">
-
+            <div class="col-md-3">
+                <div class="card w-100" style="width: 18rem;">
+                    <img class="card-img-top" src="img/<%=product.getValue().getImage() %>" alt="image">
                     <div class="card-body">
                         <h5 class="card-title"><%=product.getValue().getName() %></h5>
                         <h6 class="price">Price: $<%=product.getValue().getPrice() %></h6>
                         <h6 class="category">Category: <%=product.getValue().getCategory() %></h6>
                         <div class="mt-3 d-flex justify-content-between">
-                            <a class="btn btn-dark" href="add-to-cart?id=<%=product.getValue().getId()%>">Add to Cart</a>
+                            <a class="btn btn-dark" href="cart?id=<%=product.getValue().getId()%>">Add to Cart</a>
                         </div>
                     </div>
                 </div>

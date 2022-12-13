@@ -1,5 +1,6 @@
 <%@ page import="controllers.ProductController" %>
 <%@ page import="models.entities.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <% User auth = (User) request.getSession().getAttribute("auth");
@@ -7,6 +8,11 @@
         request.setAttribute("auth", auth);
     }
 %>
+
+<%  ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");
+    if(cartContent != null) {
+        request.setAttribute("cartContent", cartContent);
+    }%>
 
 <%--<% String message = (String) request.getAttribute("servlet-message"); %>--%>
 
@@ -34,6 +40,10 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 
+<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">--%>
+
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">--%>
+
     <jsp:include page="layouts/header.jsp"/>
 
     <title>Home</title>
@@ -42,8 +52,10 @@
 
 
 <body>
+
+<%--<jsp:include page="layouts/header.jsp"/>--%>
+
 <div id="page-container">
-<%--    <jsp:include page="layouts/header.jsp"/>--%>
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home" id="home">

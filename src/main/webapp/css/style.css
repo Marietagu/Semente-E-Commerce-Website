@@ -75,6 +75,17 @@ html{
     scroll-behavior: smooth;
 }
 
+
+/*test padding*/
+.test {
+    padding: 100px 10% 0;
+}
+
+/*test padding*/
+#page-container{
+    padding: 100px 10% 0;
+}
+
 body,
 button,
 input,

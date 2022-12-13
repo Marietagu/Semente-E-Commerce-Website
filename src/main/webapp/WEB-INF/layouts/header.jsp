@@ -32,6 +32,10 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <title></title>
 
 </head>
@@ -55,7 +59,6 @@
                     <li class="nav__item">
                         <a href="${pageContext.request.contextPath}/products" class="nav__link">Products</a>
                     </li>
-
                     <%
                         if (auth != null) {
                     %>
@@ -77,7 +80,7 @@
                         }
                     %>
                     <li class="nav__item">
-                    <a href="${pageContext.request.contextPath}/cart" class="nav__link">Cart</a>
+                    <a href="${pageContext.request.contextPath}/cart" class="nav__link">Cart<span class="badge  badge-danger px-2">${ cartContent.size()}</span></a>
                     </li>
                 </ul>
 

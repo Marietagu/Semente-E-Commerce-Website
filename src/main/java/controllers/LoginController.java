@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
             User user = UserManager.getLogin(email, password);
             if(user!=null){
                 session.setAttribute("auth", user);
-                if(session.getAttribute("cartList")!=null){
+                if(session.getAttribute("cart-list")!=null){
                     session.setAttribute("auth", user);
                     request.getRequestDispatcher("WEB-INF/cart.jsp").forward(request,response);
                 }else{

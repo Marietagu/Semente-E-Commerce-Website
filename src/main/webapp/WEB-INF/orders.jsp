@@ -1,5 +1,6 @@
 
 <%@ page import="models.entities.*" %>
+<%@ page import="java.util.ArrayList" %>
 
 <% User auth = (User) request.getSession().getAttribute("auth");
   if(auth!=null){
@@ -8,6 +9,12 @@
 %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%  ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");
+    if(cartContent != null) {
+        request.setAttribute("cartContent", cartContent);
+    };
+%>
 
 
 <!DOCTYPE html>
@@ -36,5 +43,6 @@
 <body>
 <h1>Orders</h1>
 
+<jsp:include page="layouts/footer.jsp"/>
 </body>
 </html>

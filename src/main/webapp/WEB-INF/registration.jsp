@@ -1,10 +1,18 @@
 <%@ page import="controllers.RegistrationController" %>
+<%@ page import="models.entities.Cart" %>
+<%@ page import="java.util.ArrayList" %>
 <%--<%--%>
 <%--   if (session.getAttribute("name")==null){--%>
 <%--       response.sendRedirect("login.jsp");--%>
 <%--   }--%>
 <%--%>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+
+<%  ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");
+    if(cartContent != null) {
+        request.setAttribute("cartContent", cartContent);
+    };
+%>
 
 <!DOCTYPE html>
 <html>

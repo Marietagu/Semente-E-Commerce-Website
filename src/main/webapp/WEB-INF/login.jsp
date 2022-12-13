@@ -1,11 +1,18 @@
 
 <%@ page import="models.entities.*" %>
+<%@ page import="java.util.ArrayList" %>
 
 <% User auth = (User) request.getSession().getAttribute("auth");
     if(auth!=null){
 //        request.setAttribute("auth", auth);
         response.sendRedirect("home.jsp");
     }
+%>
+
+<%  ArrayList<Cart> cartContent = (ArrayList<Cart>) session.getAttribute("content");
+    if(cartContent != null) {
+        request.setAttribute("cartContent", cartContent);
+    };
 %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -33,7 +40,6 @@
 
 </head>
 
-<br><br><br>
 
 <body>
 

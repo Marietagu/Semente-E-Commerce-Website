@@ -9,6 +9,9 @@ public class Product {
     private float price;
     private String image;
 
+    public Product() {
+
+    }
 
     public Product(int id, String name, String category, float price, String image) {
         this.id = id;
@@ -55,7 +58,7 @@ public class Product {
         return image;
     }
 
-    public void getImage(String image) {
-        this.name = image;
+    public void setImage(String image) {
+        this.image = image;
     }
 }
