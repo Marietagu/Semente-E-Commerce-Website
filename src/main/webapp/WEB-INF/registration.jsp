@@ -47,7 +47,7 @@
     <h3>This email is already registered</h3>
     <%session.removeAttribute("RegError");}%>
 </div>
-<form action="${pageContext.request.contextPath}/registration" method="post">
+<form data="regis" action="${pageContext.request.contextPath}/registration" method="post">
 
     <table>
 

@@ -1,9 +1,9 @@
-<%--<%--%>
-<%--    String username = (String) session.getAttribute("username");--%>
+<%
+    String username = (String) session.getAttribute("username");
 
-<%--    if(username == null)--%>
-<%--        username = "";--%>
-<%--%>--%>
+    if(username == null)
+        username = "";
+%>
 <%--    <h1>Welcome <%= username %></h1>--%>
 
 <%@ page import="controllers.LoginController" %>

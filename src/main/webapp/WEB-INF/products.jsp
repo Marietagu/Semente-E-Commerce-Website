@@ -41,32 +41,32 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <jsp:include page="layouts/header.jsp"/>
+
 
     <title>Product page</title>
 </head>
 
 <body>
-
+<jsp:include page="layouts/header.jsp"/>
 <div id="page-container" class="test">
 <%--    style="padding: 100px 10% 0--%>
 
     <section class="search">
         <form action="${pageContext.request.contextPath}/products" method="get" >
 
-            <label for="name-filter-id">Search by name</label>
+            <label for="name-filter-id">Search by name: </label>
             <input name="<%= ProductController.NAME_PARAM %>" id="name-filter-id" />
-            <button type="submit"><img src="img/search.png" alt="search" /></button>
+            <button type="submit" class="btn btn-"><img src="img/search.png" alt="Search" /></button>
 
-            <label for="category-filter-id">Search by category</label>
+            <label for="category-filter-id">Search by category: </label>
             <input name="<%= ProductController.CATEGORY_PARAM %>" id="category-filter-id" />
-            <button type="submit"><img src="img/search.png" alt="search" /></button>
+            <button type="submit" class="btn btn-"><img src="img/search.png" alt="Search" /></button>
 
         </form>
     </section>
 
     <div class="page-container">
-        <div class="card-header my-3" style="position: center">Our Seeds</div>
+        <div class="card-header my-3" style="position: center">Our Seeds' packs: </div>
         <div class="row">
             <%
                 if (!products.isEmpty()) {

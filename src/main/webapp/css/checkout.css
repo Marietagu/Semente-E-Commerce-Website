@@ -75,7 +75,9 @@ p, a, label{
     user-select: none;
     color: #fff;
     background: #4268b3;
-    letter-spacing: 0.08em;&. -primary {
-     padding:8px;
-     background: #5ab45a;
- }
+    letter-spacing: 0.08em;
+
+/*-primary {*/
+/*     padding:8px;*/
+/*     background: #5ab45a;*/
+/* }*/

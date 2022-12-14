@@ -12,8 +12,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
-
-
 <%
 //    User auth = (User) request.getSession().getAttribute("auth");
 //        if (auth != null) {
@@ -135,37 +133,13 @@ float total = 0;
 
         </tbody>
     </table>
-<%--    <div class="d-flex py-3"><h3> <%= total %>  </h3> <a class="mx-3 btn btn-primary" href="cart-check-out">Check Out</a></div>--%>
-    <h3><%= total %></h3>
-
-
+    <h3><%= dcf.format(total) %></h3>
     <% session.setAttribute("total", total); %>
 
-    <a href="${pageContext.request.contextPath}/checkout"> CHECKOUT </a>
+    <button type="button" class="btn btn-"> <a href="${pageContext.request.contextPath}/products" class="nav__link">Buy more!</a></button>
 
+    <button type="button" class="btn btn-"> <a href="${pageContext.request.contextPath}/checkout"> CHECKOUT </a></button>
 
-<%--    <form method="post" action="submit">--%>
-<%--        <button type="button" class="btn btn-" > </button>--%>
-<%--    </form>--%>
-
-<%--<%--%>
-
-<%--    float total = 0;--%>
-<%--    float fTotal = 0;--%>
-
-<%--    for (int i = 2; i < cartContent.size(); i++) {--%>
-
-<%--        for (Cart c : cartContent) {--%>
-<%--            total += (c.getPrice())*(c.getQuantity());--%>
-<%--        }--%>
-
-<%--        fTotal += total;--%>
-
-<%--        out.println("Total: " + fTotal);--%>
-<%--    }--%>
-
-<%--%>--%>
-<button type="button" class="btn btn-"><a href="${pageContext.request.contextPath}/products" class="nav__link">Buy more!</a></button>
 
 </div>
 </body>

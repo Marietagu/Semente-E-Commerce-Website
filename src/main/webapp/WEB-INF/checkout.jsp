@@ -6,19 +6,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <jsp:include page="layouts/header.jsp"/>
+
     <title>Checkout</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/checkout.css">
 </head>
 <body>
+
+<jsp:include page="layouts/header.jsp"/>
 <div class="card-checkout">
     <h1 class="heading">Checkout</h1>
     <!--<p>This the credit card checkout. When pressing pay now, the payment will pass through or something.</p>-->
     <div class="price-total">
-        <span>PAY </span><%= total %></div>
+        <span>Order total: </span><%= total %></div>
     <form>
+        <br><br>
         <div class="content">
+            <p>Payment information:</p>
             <label>Name on Card</label>
             <label>
                 <input class= "form-control" name="nameCard" type="text">
@@ -43,9 +47,10 @@
             </label>
         </div>
         <div class="button">
-            <button class="-primary" type="submit" >Place your order</button>
+            <button class="-primary" type="button" ><a href="${pageContext.request.contextPath}/confirmation" class="nav__link" type="submit">Place your order</a></button>
         </div>
     </form>
 </div>
+<jsp:include page="layouts/footer.jsp"/>
 </body>
 </html>
